@@ -1,8 +1,6 @@
 import { camelCase } from 'lodash-es';
-
-const message = 'Welcome to this new Node.js site, please enjoy.';
+const message = 'Welcome to this new Node.js site, please enjoy!';
 const messageIdCode = camelCase(message);
-
 export const mainContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -25,3 +23,4 @@ export const mainContent = `
 </body>
 </html>
 `;
+//# sourceMappingURL=content.js.map
