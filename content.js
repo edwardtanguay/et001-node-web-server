@@ -1,4 +1,4 @@
-const message = 'Welcome to this Node site.';
+const message = 'Welcome to this new Node.js site.';
 
 export const mainContent = `
 <!DOCTYPE html>
