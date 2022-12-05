@@ -1,4 +1,16 @@
+import axios from 'axios';
 import { camelCase } from 'lodash-es';
+const url = 'https://edwardtanguay.vercel.app/share/germanNouns.json';
+const options = {
+    method: 'GET',
+    url: url,
+    headers: {
+        'Accept-Encoding': 'application/json'
+    }
+};
+const nouns = (await axios.request(options)).data;
+// const nouns = (await axios.get(url)).data;
+// console.log(nouns);
 const message = 'Welcome to this new Node.js site, please enjoy!';
 const messageIdCode = camelCase(message);
 export const mainContent = `
@@ -20,6 +32,14 @@ export const mainContent = `
     <h1>Info Site</h1>
     <p>${message}</p>
     <p>${messageIdCode}</p>
+
+     
+<h2>Verbs</h2>
+${nouns.map((noun) => {
+    return `<div class="verb">
+        <div class="singular">${noun.article} ${noun.singular}</div>
+    </div>`;
+}).join('')}
 </body>
 </html>
 `;
